@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Backend.master.cs" Inherits="SnoDrifters.Backend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"/>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css"/>
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/responsive.css"/>
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'/>     
+    <title></title>    
+</head>
+<body>
+  <nav id="back-menu" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="BackendHomepage.aspx"><img src="img/SnoDrifters/MJSNOWGUY_Logo.png" alt="SnoDrifters"/>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Admin Home</a></li>
+          <li><a href="#">Events Editor</a></li>
+          <li><a href="#">Gallery Editor</a></li>
+          <li><a href="#">Sponsors Editor</a></li>
+          <li><a href="Logout.aspx">Logout</a></li>
+        </ul>
+      </div>      
+    </div>    
+  </nav>   
+    <form id="form1" class="backendContent" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <nav id="tf-footer">
+        <div class="container">     
+              <div class="pull-right">
+                <ul class="social-media list-inline">
+                    <li><a class="backend" href="https://www.facebook.com/MooseJawSnoDrifters"><span class="fa fa-facebook"></span></a></li>
+                    <li><a class="backend" href="https://twitter.com/mjsnow15"><span class="fa fa-twitter"></span></a></li>
+                    <li><a class="backend" href="#"><span class="fa fa-youtube"></span></a></li>                                      
+                </ul>
+            </div>       
+            
+        </div>
+    </nav>
+</body>
+</html>

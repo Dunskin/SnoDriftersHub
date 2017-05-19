@@ -66,7 +66,155 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPageHome.aspx" />
+    <Content Include="BackendHomepage.aspx" />
+    <Content Include="BackendLogin.aspx" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\SnoDrifters.dll" />
+    <Content Include="bin\SnoDrifters.pdb" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\loginform.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="EventEditor.aspx" />
+    <Content Include="fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts-awesome\css\font-awesome.css" />
+    <Content Include="fonts\fonts-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="galleryPhotos.aspx" />
+    <Content Include="img\01.jpg" />
+    <Content Include="img\02.jpg" />
+    <Content Include="img\03.jpg" />
+    <Content Include="img\04.jpg" />
+    <Content Include="img\05.jpg" />
+    <Content Include="img\06.jpg" />
+    <Content Include="img\07.jpg" />
+    <Content Include="img\08.jpg" />
+    <Content Include="img\09.jpg" />
+    <Content Include="img\10.jpg" />
+    <Content Include="img\SnoDrifters\MJSNOWGUY.png" />
+    <Content Include="img\SnoDrifters\MJSNOWGUY_Logo.png" />
+    <Content Include="img\snowmobile01.jpg" />
+    <Content Include="img\snowmobile02.jpg" />
+    <Content Include="img\snowmobile03.jpg" />
+    <Content Include="img\Sponsors\blank.png" />
+    <Content Include="img\Sponsors\Desert.jpg" />
+    <Content Include="img\Sponsors\Jellyfish.jpg" />
+    <Content Include="img\Sponsors\Koala.jpg" />
+    <Content Include="img\Sponsors\Penguins.jpg" />
+    <Content Include="img\Sponsors\remax.png" />
+    <Content Include="img\Sponsors\rockcreek.jpg" />
+    <Content Include="img\Sponsors\Tulips.jpg" />
+    <Content Include="img\Sponsors\Western Truck Centre.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery.1.11.1.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\modernizr.custom.js" />
+    <Content Include="js\SmoothScroll.js" />
+    <Content Include="js\socialfeeds.js" />
+    <Content Include="Logout.aspx" />
+    <Content Include="obj\Debug\SnoDrifters.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\SnoDrifters.dll" />
+    <Content Include="obj\Debug\SnoDrifters.pdb" />
+    <Content Include="oldfiles\ownerlogin.aspx" />
+    <Content Include="oldfiles\OwnerPage.aspx" />
+    <Content Include="oldfiles\SponserEditor.aspx" />
+    <Content Include="ownerlog.aspx" />
     <Content Include="packages.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\SnoDrifters.dll.config" />
+    <Content Include="Documents\Club ByLaws.pdf" />
+    <Content Include="Documents\Sno-Drifters Application Form.pdf" />
+    <Content Include="Documents\Standard Operating Procedures.pdf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome\less\animated.less" />
+    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fonts-awesome\less\animated.less" />
+    <Content Include="fonts\fonts-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\fonts-awesome\less\core.less" />
+    <Content Include="fonts\fonts-awesome\less\fixed-width.less" />
+    <Content Include="fonts\fonts-awesome\less\font-awesome.less" />
+    <Content Include="fonts\fonts-awesome\less\icons.less" />
+    <Content Include="fonts\fonts-awesome\less\larger.less" />
+    <Content Include="fonts\fonts-awesome\less\list.less" />
+    <Content Include="fonts\fonts-awesome\less\mixins.less" />
+    <Content Include="fonts\fonts-awesome\less\path.less" />
+    <Content Include="fonts\fonts-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\fonts-awesome\less\stacked.less" />
+    <Content Include="fonts\fonts-awesome\less\variables.less" />
+    <Content Include="fonts\fonts-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_animated.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_core.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_icons.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_larger.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_list.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_path.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\fonts-awesome\scss\_variables.scss" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\SnoDrifters.csprojResolveAssemblyReference.cache" />
+    <Content Include="Backend.Master" />
+    <Content Include="Youtube.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +223,131 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SnoDrifters.aspx" />
+    <Content Include="SponsorEditor.aspx" />
+    <Content Include="SponsorsTest.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPageHome.aspx.cs">
+      <DependentUpon>AdminPageHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageHome.aspx.designer.cs">
+      <DependentUpon>AdminPageHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Backend.Master.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Backend.Master.designer.cs">
+      <DependentUpon>Backend.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BackendHomepage.aspx.cs">
+      <DependentUpon>BackendHomepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackendHomepage.aspx.designer.cs">
+      <DependentUpon>BackendHomepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackendLogin.aspx.cs">
+      <DependentUpon>BackendLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackendLogin.aspx.designer.cs">
+      <DependentUpon>BackendLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classes\Album.cs" />
+    <Compile Include="classes\Contact.cs" />
+    <Compile Include="classes\ContentManager.cs" />
+    <Compile Include="classes\Events.cs" />
+    <Compile Include="classes\Gallery.cs" />
+    <Compile Include="classes\Media.cs" />
+    <Compile Include="classes\Sponsor.cs" />
+    <Compile Include="EventEditor.aspx.cs">
+      <DependentUpon>EventEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventEditor.aspx.designer.cs">
+      <DependentUpon>EventEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="galleryPhotos.aspx.cs">
+      <DependentUpon>galleryPhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="galleryPhotos.aspx.designer.cs">
+      <DependentUpon>galleryPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="oldfiles\ownerlogin.aspx.cs">
+      <DependentUpon>ownerlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\ownerlogin.aspx.designer.cs">
+      <DependentUpon>ownerlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\OwnerPage.aspx.cs">
+      <DependentUpon>OwnerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\OwnerPage.aspx.designer.cs">
+      <DependentUpon>OwnerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\SponserEditor.aspx.cs">
+      <DependentUpon>SponserEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\SponserEditor.aspx.designer.cs">
+      <DependentUpon>SponserEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ownerlog.aspx.cs">
+      <DependentUpon>ownerlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ownerlog.aspx.designer.cs">
+      <DependentUpon>ownerlog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SnoDrifters.aspx.cs">
+      <DependentUpon>SnoDrifters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SnoDrifters.aspx.designer.cs">
+      <DependentUpon>SnoDrifters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorEditor.aspx.cs">
+      <DependentUpon>SponsorEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SponsorEditor.aspx.designer.cs">
+      <DependentUpon>SponsorEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorsTest.aspx.cs">
+      <DependentUpon>SponsorsTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SponsorsTest.aspx.designer.cs">
+      <DependentUpon>SponsorsTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Youtube.aspx.cs">
+      <DependentUpon>Youtube.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Youtube.aspx.designer.cs">
+      <DependentUpon>Youtube.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
