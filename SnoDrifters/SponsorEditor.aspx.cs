@@ -70,7 +70,7 @@ namespace SnoDrifters
             //fupLogo.SaveAs(Server.MapPath("images/UploadedImages/" + fupLogo.FileName));            
             if (fupLogo.FileName == "")
             {
-                //Creates a static name? Change probably
+                //If no picture is provided we give it a blank image (last years code - Patrick)
                 fupLogo.SaveAs(Server.MapPath("~\\img\\Sponsors\\Blank.png"));
             }
             else
