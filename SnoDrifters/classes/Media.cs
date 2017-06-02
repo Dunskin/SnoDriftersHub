@@ -48,4 +48,24 @@ using System.Web;
             }
                 return renderText;
         }
+
+    public string RenderForCarousel()
+    {
+        string renderText = "";
+        if (FileType == "Picture")
+        {
+            renderText = @"<div class='fill' 
+         style='background-color:#48c3af; 
+         background-image:url(./img/" + MediaLink + ");'></div>";
+        }
+        else
+        {
+            renderText = MediaLink;
+        }
+        return renderText;
     }
+
+
+
+
+}

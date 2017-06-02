@@ -146,6 +146,7 @@
     <Content Include="oldfiles\Gallery_Editor2.aspx" />
     <Content Include="oldfiles\ownerlogin.aspx" />
     <Content Include="oldfiles\OwnerPage.aspx" />
+    <Content Include="oldfiles\SnoDrifters.aspx" />
     <Content Include="oldfiles\SponserEditor.aspx" />
     <Content Include="ownerlog.aspx" />
     <Content Include="packages.config" />
@@ -355,6 +356,13 @@
     </Compile>
     <Compile Include="oldfiles\OwnerPage.aspx.designer.cs">
       <DependentUpon>OwnerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\SnoDrifters.aspx.cs">
+      <DependentUpon>SnoDrifters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\SnoDrifters.aspx.designer.cs">
+      <DependentUpon>SnoDrifters.aspx</DependentUpon>
     </Compile>
     <Compile Include="oldfiles\SponserEditor.aspx.cs">
       <DependentUpon>SponserEditor.aspx</DependentUpon>
