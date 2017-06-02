@@ -97,7 +97,6 @@
     <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GalleryEditor.aspx" />
-    <Content Include="GalleryEditor2.aspx" />
     <Content Include="galleryPhotos.aspx" />
     <Content Include="img\01.jpg" />
     <Content Include="img\02.jpg" />
@@ -284,13 +283,6 @@
     </Compile>
     <Compile Include="GalleryEditor.aspx.designer.cs">
       <DependentUpon>GalleryEditor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GalleryEditor2.aspx.cs">
-      <DependentUpon>GalleryEditor2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GalleryEditor2.aspx.designer.cs">
-      <DependentUpon>GalleryEditor2.aspx</DependentUpon>
     </Compile>
     <Compile Include="galleryPhotos.aspx.cs">
       <DependentUpon>galleryPhotos.aspx</DependentUpon>

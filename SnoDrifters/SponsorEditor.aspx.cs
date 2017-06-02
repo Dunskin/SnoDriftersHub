@@ -11,15 +11,15 @@ namespace SnoDrifters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ContentManager cm = new ContentManager();
-            //grdSponsor.DataSource = cm.GetAllSponsors();
-            //grdSponsor.DataBind();
+            if (Session["userName"] == null)
+            {
+                Response.Redirect("BackendLogin.aspx");
+            }
         }
 
         protected void grdSponsor_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int key = Convert.ToInt32(e.Keys["sponsorid"]);
-            //Label1.Text = key.ToString();
+            int key = Convert.ToInt32(e.Keys["sponsorid"]);            
 
             ContentManager cm = new ContentManager();
             cm.deleteSponsor(key);

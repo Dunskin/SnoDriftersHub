@@ -35,10 +35,10 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Admin Home</a></li>
+          <li><a href="AdminPageHome.aspx">Admin Home</a></li>
           <li><a href="#">Events Editor</a></li>
-          <li><a href="#">Gallery Editor</a></li>
-          <li><a href="#">Sponsors Editor</a></li>
+          <li><a href="GalleryEditor.aspx">Gallery Editor</a></li>
+          <li><a href="SponsorEditor.aspx">Sponsors Editor</a></li>
           <li><a href="Logout.aspx">Logout</a></li>
         </ul>
       </div>      
