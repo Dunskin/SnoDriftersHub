@@ -84,6 +84,7 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\events.css" />
     <Content Include="css\loginform.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
@@ -125,6 +126,8 @@
     <Content Include="img\Sponsors\Western Truck Centre.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\event.js" />
+    <Content Include="js\eventCarasoul.js" />
     <Content Include="js\jquery-1.11.2.min.js" />
     <Content Include="js\jquery.1.11.1.js" />
     <Content Include="js\main.js" />

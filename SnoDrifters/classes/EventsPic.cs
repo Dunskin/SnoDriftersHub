@@ -18,7 +18,7 @@ using System.Web;
         public string FileType { get; set; }
 
       public EventsPic(int id, int day, string month, int year, string title, string description,
-          string location, string mediaLink, string filetype)
+      string location, string mediaLink, string filetype)
             {
                 Id = id;
                 Day = day;
@@ -30,14 +30,14 @@ using System.Web;
                 MediaLink = mediaLink;
                 FileType = FileType;
             }
-            public EventsPic() { }
+      public EventsPic() { }
 
-            public int Id
+      public int Id
             {
                 get { return _id; }
                 set { _id = value; }
             }
-            public string Render()
+      public string Render()
             {
                 string renderText = "";
                 if (FileType.Trim() == "Picture")
@@ -51,7 +51,7 @@ using System.Web;
                 return renderText;
             }
 
-            public string RenderForCarousel()
+      public string RenderForCarousel()
             {
                 string renderText = "";
                 if (FileType.Trim() == "Picture")
