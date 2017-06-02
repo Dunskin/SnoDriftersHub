@@ -37,7 +37,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!--Events Scripts and CSS -->
-     <link href="css/events.css" rel="stylesheet" />
+     <link href="events.css" rel="stylesheet" />
      <link href="style.css" rel="stylesheet" type="text/css" />
 
      <script src="js/event.js"></script>
@@ -45,17 +45,16 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
      <script src="js/jquery.flexisel.js" type="text/javascript"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
      <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'
         media="screen" /> 
      <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#myCarousel').carousel();
-        });
-    </script>
+     <script type="text/javascript">
+         $(function () {
+             $('#myCarousel').carousel();
+         });
+     </script>
 
 
 
