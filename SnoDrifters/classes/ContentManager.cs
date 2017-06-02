@@ -9,36 +9,7 @@ using System.Web.Configuration;
 
     public class ContentManager
     {
-
-        //public void InsertBasicContentPage(BasicContentPage bcp)
-        //{
-        //    string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-        //    SqlConnection con = new SqlConnection(conString);
-        //    string sql = "INSERT INTO pages(PageTitle) VALUES (@PageTitle);SELECT SCOPE_IDENTITY();";
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-
-        //    cmd.Parameters.AddWithValue("PageTitle", bcp.PageTitle);
-          
-        //    con.Open();
-        //    //This will be subPage below
-        //    int key =  Convert.ToInt32(cmd.ExecuteScalar());
-        //    //con.Close();
-
-        //    sql = "INSERT INTO BasicContentPages(SubPageId, ImageName, PageText, PageId) VALUES (@SubPageId, @ImageName, @PageText, @PageId)";
-        //     cmd = new SqlCommand(sql, con);
-
-        //    cmd.Parameters.AddWithValue("SubPageId", key);
-        //    cmd.Parameters.AddWithValue("ImageName", bcp.PageImage);
-        //    cmd.Parameters.AddWithValue("PageText", bcp.PageText);
-        //    cmd.Parameters.AddWithValue("PageId", bcp.PageId);
-        //    con.Open();
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-
-
-        //}
-
-        public List<Sponsor> GetAllSponsors()
+     public List<Sponsor> GetAllSponsors()
         {
 
             List<Sponsor> sponsors = new List<Sponsor>();
@@ -74,145 +45,7 @@ using System.Web.Configuration;
             return sponsors;
         }
 
-        public void InsertEvent(Events ev)
-        {
-            string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(conString);
-            string sql = "INSERT INTO Events(day, month, title, description, image, year, location) VALUES ( @day, @month, @title, @description, @image, @year, @location)";
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            //cmd.Parameters.AddWithValue("id", ev.Id);
-            cmd.Parameters.AddWithValue("day", ev.Day);
-            cmd.Parameters.AddWithValue("month", ev.Month);
-            cmd.Parameters.AddWithValue("title", ev.Title);
-            cmd.Parameters.AddWithValue("description", ev.Description);
-            cmd.Parameters.AddWithValue("image", ev.Image);
-            cmd.Parameters.AddWithValue("year", ev.Year);
-            cmd.Parameters.AddWithValue("location", ev.Location);
-
-            con.Open();
-            
-                           
-            cmd.ExecuteNonQuery();
-            con.Close();
-            
-        }
-
-        public List<Events> GetAllEvents()
-        {
-
-            List<Events> events = new List<Events>();
-
-            string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(conString);
-            string sql = "Select id, day, month, title, description, image, year, location from Events";
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = sql;
-            cmd.Connection = con;
-
-            con.Open();
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Events ev = new Events();
-                ev.Id = Convert.ToInt32(reader["id"].ToString());
-                ev.Day = Convert.ToInt32(reader["day"].ToString());
-                ev.Month = reader["month"].ToString();
-                ev.Title = reader["title"].ToString();
-                ev.Description = reader["description"].ToString();
-                ev.Image = reader["image"].ToString();
-                ev.Year = Convert.ToInt32(reader["year"].ToString());
-                ev.Location = reader["location"].ToString();
-                
-                events.Add(ev);
-            }
-
-            con.Close();
-            return events;
-        }
-
-        public List<Events> GetRecentEvents()
-        {
-
-            List<Events> events = new List<Events>();
-
-            string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(conString);
-            string sql = "Select top 3 id, day, month, title, description, image, year, location from Events ORDER BY id DESC";
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = sql;
-            cmd.Connection = con;
-
-            con.Open();
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Events ev = new Events();
-                ev.Id = Convert.ToInt32(reader["id"].ToString());
-                ev.Day = Convert.ToInt32(reader["day"].ToString());
-                ev.Month = reader["month"].ToString();
-                ev.Title = reader["title"].ToString();
-                ev.Description = reader["description"].ToString();
-                ev.Image = reader["image"].ToString();
-                ev.Year = Convert.ToInt32(reader["year"].ToString());
-                ev.Location = reader["location"].ToString();
-
-                events.Add(ev);
-            }
-
-            con.Close();
-            return events;
-        }
-
-        
-
-        public void deleteEvent(int id)
-        {
-            string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(conString);
-            string sql = "delete from Events where id=@id";
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            cmd.Parameters.AddWithValue("id", id);
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        //public void updateEvent(int id, int day, string month, string title, string description, string image, int year, string location)
-        public void updateEvent(Events ev)
-        {
-            string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
-            SqlConnection con = new SqlConnection(conString);
-
-            string sql = "update Events set day=@day, month=@month, title=@title, description=@descripion, image=@image, year=@year, location=@location where id=@id";
-
-            SqlCommand cmd = new SqlCommand(sql, con);
-
-            
-            cmd.Parameters.AddWithValue("day", ev.Day);
-            cmd.Parameters.AddWithValue("month", ev.Month);
-            cmd.Parameters.AddWithValue("title", ev.Title);
-            cmd.Parameters.AddWithValue("description", ev.Description);
-            cmd.Parameters.AddWithValue("image", ev.Image);
-            cmd.Parameters.AddWithValue("year", ev.Year);
-            cmd.Parameters.AddWithValue("location", ev.Location);
-            cmd.Parameters.AddWithValue("id", ev.Id);
-
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-        }
-
-        public void InsertSponsor(Sponsor sp)
+           public void InsertSponsor(Sponsor sp)
         {
             string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
@@ -276,4 +109,109 @@ using System.Web.Configuration;
             con.Close();
         }
 
+    //Events 
+    public void InsertNewEvent(EventsPic e)
+    {
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+
+        SqlConnection con = new SqlConnection(conString);
+        string sql = "INSERT INTO EventsPic(day, month, year, title, description, location, medialink, filetype) VALUES ( @day, @month, @year,  @title, @description,  @location, @medialink, @filetype)";
+        SqlCommand cmd = new SqlCommand(sql, con);
+
+        cmd.Parameters.AddWithValue("day", e.Day);
+        cmd.Parameters.AddWithValue("month", e.Month);
+        cmd.Parameters.AddWithValue("title", e.Title);
+        cmd.Parameters.AddWithValue("description", e.Description);
+        cmd.Parameters.AddWithValue("year", e.Year);
+        cmd.Parameters.AddWithValue("location", e.Location);
+        cmd.Parameters.AddWithValue("MediaLink", e.MediaLink);
+        cmd.Parameters.AddWithValue("filetype", e.FileType);
+
+        con.Open();
+
+        cmd.ExecuteNonQuery();
+        con.Close();
+
     }
+
+    public List<EventsPic> getAllEvents()
+
+    {
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+        SqlConnection con = new SqlConnection(conString);
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText = "Select day, month, title, description, location, year, medialink, filetype From  EventsPic";
+
+        con.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        List<EventsPic> newEventsList = new List<EventsPic>();
+
+        while (reader.Read())
+        {
+            EventsPic e = new EventsPic();
+            e.Day = Convert.ToInt32(reader["day"].ToString());
+            e.Month = reader["month"].ToString();
+            e.Title = reader["title"].ToString();
+            e.Description = reader["description"].ToString();
+            e.Location = reader["location"].ToString();
+            e.Year = Convert.ToInt32(reader["year"]);
+            e.MediaLink = reader["mediaLink"].ToString();
+            e.FileType = reader["filetype"].ToString();
+
+            newEventsList.Add(e);
+        }
+        con.Close();
+        return newEventsList;
+    }
+    public List<EventsPic> GetRecentEvents()
+    {
+        List<EventsPic> events = new List<EventsPic>();
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+        SqlConnection con = new SqlConnection(conString);
+        string sql = "Select top 3 id, day, month, title, description, image, year, location from Events ORDER BY id DESC";
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.CommandText = sql;
+        cmd.Connection = con;
+
+        con.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            EventsPic ev = new EventsPic();
+            ev.Day = Convert.ToInt32(reader["day"].ToString());
+            ev.Month = reader["month"].ToString();
+            ev.Title = reader["title"].ToString();
+            ev.Description = reader["description"].ToString();
+            ev.Location = reader["location"].ToString();
+            ev.Year = Convert.ToInt32(reader["year"]);
+            ev.MediaLink = reader["mediaLink"].ToString();
+            ev.FileType = reader["filetype"].ToString();
+            events.Add(ev);
+        }
+
+        con.Close();
+        return events;
+    }
+    public void deleteEvent(int id)
+    {
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+        SqlConnection con = new SqlConnection(conString);
+        string sql = "delete from EventsPic where id=@id";
+        SqlCommand cmd = new SqlCommand(sql, con);
+
+        cmd.Parameters.AddWithValue("id", id);
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+}
+    
+
+    

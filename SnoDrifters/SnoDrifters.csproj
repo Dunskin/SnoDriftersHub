@@ -267,6 +267,7 @@
     <Compile Include="classes\Contact.cs" />
     <Compile Include="classes\ContentManager.cs" />
     <Compile Include="classes\Events.cs" />
+    <Compile Include="classes\EventsPic.cs" />
     <Compile Include="classes\Gallery.cs" />
     <Compile Include="classes\Media.cs" />
     <Compile Include="classes\Sponsor.cs" />
