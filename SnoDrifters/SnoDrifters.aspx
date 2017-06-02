@@ -304,8 +304,9 @@ A groomed trail system will provide a safe place to ride without any risk of dam
         </div>
     </div>
     <nav id="tf-footer">
-        <div class="container">     
-              <div class="pull-right">
+        <div class="container">   
+             <a href="AdminPageHome.aspx">Admin Login</a>  
+              <div class="pull-right">                 
                 <ul class="social-media list-inline">
                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
                     <li><a href="#"><span class="fa fa-twitter"></span></a></li>

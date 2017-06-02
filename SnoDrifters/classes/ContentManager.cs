@@ -230,11 +230,10 @@ using System.Web.Configuration;
 
             con.Open();
 
-
             cmd.ExecuteNonQuery();
             con.Close();
-
         }
+
         public void deleteSponsor(int id)
         {
             string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
@@ -247,8 +246,6 @@ using System.Web.Configuration;
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-
-
         }
 
         public void updateSponsor(Sponsor sp)
@@ -260,7 +257,6 @@ using System.Web.Configuration;
 
             SqlCommand cmd = new SqlCommand(sql, con);
 
-
             cmd.Parameters.AddWithValue("name", sp.Name);
             cmd.Parameters.AddWithValue("shortdescription", sp.ShortDescription);
             cmd.Parameters.AddWithValue("logo", sp.Logo);
@@ -269,7 +265,6 @@ using System.Web.Configuration;
             cmd.Parameters.AddWithValue("email", sp.Email);
             cmd.Parameters.AddWithValue("website", sp.Website);
             cmd.Parameters.AddWithValue("sponsorid", sp.SponsorId);
-
 
             con.Open();
             cmd.ExecuteNonQuery();
