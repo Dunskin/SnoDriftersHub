@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPageHome.aspx" />
-    <Content Include="BackendHomepage.aspx" />
     <Content Include="BackendLogin.aspx" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
@@ -88,7 +87,6 @@
     <Content Include="css\loginform.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
-    <Content Include="EventEditor.aspx" />
     <Content Include="fonts\font-awesome\css\font-awesome.css" />
     <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -249,13 +247,6 @@
     <Compile Include="Backend.Master.designer.cs">
       <DependentUpon>Backend.Master</DependentUpon>
     </Compile>
-    <Compile Include="BackendHomepage.aspx.cs">
-      <DependentUpon>BackendHomepage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BackendHomepage.aspx.designer.cs">
-      <DependentUpon>BackendHomepage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BackendLogin.aspx.cs">
       <DependentUpon>BackendLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -270,13 +261,6 @@
     <Compile Include="classes\Gallery.cs" />
     <Compile Include="classes\Media.cs" />
     <Compile Include="classes\Sponsor.cs" />
-    <Compile Include="EventEditor.aspx.cs">
-      <DependentUpon>EventEditor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EventEditor.aspx.designer.cs">
-      <DependentUpon>EventEditor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GalleryEditor.aspx.cs">
       <DependentUpon>GalleryEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

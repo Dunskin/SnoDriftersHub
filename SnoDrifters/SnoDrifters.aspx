@@ -106,44 +106,55 @@
                 <h3>Events</h3>
                 <hr>
             </div>
-            <div class="space"></div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <i class="fa fa-cutlery" aria-hidden="true"></i>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">BBQ Cookout</h4>
-                        <p>Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <i class="fa fa-plane" aria-hidden="true"></i>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Trip to Alberta</h4>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="media-left media-middle">
-                        <!--<i class="fa fa-money" aria-hidden="true"></i>-->
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Fundraiser</h4>
-                        <p>Metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                    </div>
-                </div>
-            </div>
 
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">  
+    <!--Main Repeater -->
+    <asp:Repeater ID= "rptMain" runat="server" OnItemDataBound="OnItemDataBound">  
+        <ItemTemplate>
+              <ol class="carousel-indicators" >
+                    <asp:Repeater ID="rptIndicators" runat="server">
+                        <ItemTemplate>
+                            <li data-target="#myCarousel" data-slide-to='<%# Container.ItemIndex%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>
+                           <%-- <%#Eval("Day")%>--%>
+                            </li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <asp:Repeater ID="rptSlides" runat="server">
+                        <ItemTemplate>
+                            <div <%# Container.ItemIndex == 0 ? "class=\"item active\"" : "class=\"item\"" %>>
+                                <div class="fill" background-image: url(./img/"+MediaLink+") <%#((EventsPic)Container.DataItem).RenderForCarousel()%>;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h2><%#Eval("Title")%></h2>
+                                    <h3><%#Eval("Month ")%><%#Eval("Day ")%><%#Eval("Year")%></h3>
+                                    <small><%#Eval("Description ")%><%#Eval(" Location")%></small>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </ItemTemplate>
+       
+
+    </asp:Repeater>
+               
+
+         <!--Left and Right controls -->
+
+<%--      <a class="left carousel-control" href="#myCarousel"  data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+      </a>
+
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+       </a>--%>
+            
         </div>
     </div>
+        </div>
     <div id="tf-gallery">
         <div class="container">
             <div class="section-title">
