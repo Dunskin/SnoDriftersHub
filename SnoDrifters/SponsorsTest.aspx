@@ -46,15 +46,13 @@
                         <h3>Sponsors</h3>
                         <br/>
                         <div class="row">
-                            <div class="col-md-2">
-                                <img src="img/09.jpg" class="img-responsive"/>
-                            </div>
-                            <div class="col-md-2">
-                                <img src="img/02.jpg" class="img-responsive"/>
-                            </div>
-                            <div class="col-md-2">
-                                <img src="img/03.jpg" class="img-responsive"/>
-                            </div>                        
+                            <asp:Repeater ID="rptSponsor" runat="server">
+                                <itemtemplate>
+                                    <div class="col-md-4">
+                                        <img src='<%#("img/Sponsors/")+Eval("logo")%>' class="img-responsive"/>
+                                    </div>
+                                </itemtemplate>
+                            </asp:Repeater>                        
                         </div>                        
                     </div>
                 </div>

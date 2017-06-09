@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="BackendHomepage.aspx"><img src="img/SnoDrifters/MJSNOWGUY_Logo.png" alt="SnoDrifters"/>
+        <a class="navbar-brand" href="AdminPagehome.aspx"><img src="img/SnoDrifters/MJSNOWGUY_Logo.png" alt="SnoDrifters"/>
         </a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,6 +39,7 @@
           <li><a href="EventEditor.aspx">Events Editor</a></li>
           <li><a href="GalleryEditor.aspx">Gallery Editor</a></li>
           <li><a href="SponsorEditor.aspx">Sponsors Editor</a></li>
+          <li><a href="ChangePassword.aspx">Change Password</a></li>
           <li><a href="Logout.aspx">Logout</a></li>
         </ul>
       </div>      

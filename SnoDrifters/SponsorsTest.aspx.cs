@@ -12,6 +12,10 @@ namespace SnoDrifters
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            ContentManager sponsorContent = new ContentManager();
+            List<Sponsor> sp = sponsorContent.GetAllSponsors();
+            rptSponsor.DataSource = sp;
+            rptSponsor.DataBind();
         }
     }
 }

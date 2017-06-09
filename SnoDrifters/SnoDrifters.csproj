@@ -68,19 +68,6 @@
   <ItemGroup>
     <Content Include="AdminPageHome.aspx" />
     <Content Include="BackendLogin.aspx" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="bin\roslyn\csc.exe" />
-    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="bin\roslyn\vbc.exe" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\SnoDrifters.dll" />
-    <Content Include="bin\SnoDrifters.pdb" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
@@ -89,6 +76,7 @@
     <Content Include="css\loginform.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\style.css" />
+    <Content Include="Email.aspx" />
     <Content Include="EventEditor.aspx" />
     <Content Include="fonts\font-awesome\css\font-awesome.css" />
     <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
@@ -136,9 +124,6 @@
     <Content Include="js\SmoothScroll.js" />
     <Content Include="js\socialfeeds.js" />
     <Content Include="Logout.aspx" />
-    <Content Include="obj\Debug\SnoDrifters.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\SnoDrifters.dll" />
-    <Content Include="obj\Debug\SnoDrifters.pdb" />
     <Content Include="oldfiles\Gallery.aspx" />
     <Content Include="oldfiles\GalleryEditor1.aspx" />
     <Content Include="oldfiles\GalleryEditor2.aspx" />
@@ -150,10 +135,6 @@
     <Content Include="oldfiles\SponserEditor.aspx" />
     <Content Include="ownerlog.aspx" />
     <Content Include="packages.config" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="bin\SnoDrifters.dll.config" />
     <Content Include="Documents\Club ByLaws.pdf" />
     <Content Include="Documents\Sno-Drifters Application Form.pdf" />
     <Content Include="Documents\Standard Operating Procedures.pdf" />
@@ -223,9 +204,8 @@
     <Content Include="fonts\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\SnoDrifters.csprojResolveAssemblyReference.cache" />
     <Content Include="Backend.Master" />
+    <Content Include="SnoDriftersMain.aspx" />
     <Content Include="Youtube.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -235,10 +215,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SnoDrifters.aspx" />
     <Content Include="SponsorEditor.aspx" />
     <Content Include="SponsorsTest.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPageHome.aspx.cs">
@@ -278,7 +259,13 @@
     <Compile Include="classes\Login.cs" />
     <Compile Include="classes\Media.cs" />
     <Compile Include="classes\Sponsor.cs" />
-    <Compile Include="classes\Users.cs" />
+    <Compile Include="Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EventEditor.aspx.cs">
       <DependentUpon>EventEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,12 +368,12 @@
       <DependentUpon>ownerlog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SnoDrifters.aspx.cs">
-      <DependentUpon>SnoDrifters.aspx</DependentUpon>
+    <Compile Include="SnoDriftersMain.aspx.cs">
+      <DependentUpon>SnoDriftersMain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SnoDrifters.aspx.designer.cs">
-      <DependentUpon>SnoDrifters.aspx</DependentUpon>
+    <Compile Include="SnoDriftersMain.aspx.designer.cs">
+      <DependentUpon>SnoDriftersMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="SponsorEditor.aspx.cs">
       <DependentUpon>SponsorEditor.aspx</DependentUpon>
@@ -411,7 +398,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

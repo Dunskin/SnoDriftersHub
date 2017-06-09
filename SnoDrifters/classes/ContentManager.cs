@@ -207,22 +207,23 @@ using System.Web.Configuration;
         con.Close();
     }
 
-    public void updatePassword(SnoDrifters.classes.Users us)
+    public int updatePassword(string UserName, string OldPassword, string NewPassword)
     {
         string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
         SqlConnection con = new SqlConnection(conString);
 
-        string sql = "Update Login set passWord='@NewPassword' where userName='@UserName' and passWord='@OldPassword';";
+        string sql = "Update Login set passWord=@NewPassword where userName=@UserName and passWord=@OldPassword;";
 
         SqlCommand cmd = new SqlCommand(sql, con);
 
-        cmd.Parameters.AddWithValue("NewPassword", us.NewPassWord);
-        cmd.Parameters.AddWithValue("UserName", us.UserName);
-        cmd.Parameters.AddWithValue("OldPassWord", us.OldPassWord);      
+        cmd.Parameters.AddWithValue("NewPassword", NewPassword);
+        cmd.Parameters.AddWithValue("UserName", UserName);
+        cmd.Parameters.AddWithValue("OldPassword", OldPassword);      
 
         con.Open();
-        cmd.ExecuteNonQuery();
+        int count = cmd.ExecuteNonQuery();
         con.Close();
+        return count;
     }
 }
     

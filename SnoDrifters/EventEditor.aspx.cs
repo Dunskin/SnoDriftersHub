@@ -16,8 +16,10 @@ namespace SnoDrifters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            
+            if (Session["userName"] == null)
+            {
+                Response.Redirect("BackendLogin.aspx");
+            }
         }
 
         protected void btnInsert_Click(object sender, EventArgs e)
