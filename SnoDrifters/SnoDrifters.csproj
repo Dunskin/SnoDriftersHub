@@ -81,6 +81,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\SnoDrifters.dll" />
     <Content Include="bin\SnoDrifters.pdb" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -262,14 +263,23 @@
     <Compile Include="BackendLogin.aspx.designer.cs">
       <DependentUpon>BackendLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="classes\Album.cs" />
     <Compile Include="classes\Contact.cs" />
     <Compile Include="classes\ContentManager.cs" />
     <Compile Include="classes\Events.cs" />
     <Compile Include="classes\EventsPic.cs" />
     <Compile Include="classes\Gallery.cs" />
+    <Compile Include="classes\Login.cs" />
     <Compile Include="classes\Media.cs" />
     <Compile Include="classes\Sponsor.cs" />
+    <Compile Include="classes\Users.cs" />
     <Compile Include="EventEditor.aspx.cs">
       <DependentUpon>EventEditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

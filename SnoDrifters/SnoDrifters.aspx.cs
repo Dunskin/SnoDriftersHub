@@ -15,8 +15,8 @@ namespace SnoDrifters
         {
             ContentManager eventContent = new ContentManager();
             List<EventsPic> ev = eventContent.getAllEvents();
-            rptMain.DataSource = ev;
-            rptMain.DataBind();
+            //rptMain.DataSource = ev;
+            //rptMain.DataBind();
         }
 
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)

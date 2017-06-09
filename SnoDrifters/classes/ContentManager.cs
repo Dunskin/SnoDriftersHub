@@ -206,6 +206,24 @@ using System.Web.Configuration;
         cmd.ExecuteNonQuery();
         con.Close();
     }
+
+    public void updatePassword(SnoDrifters.classes.Users us)
+    {
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+        SqlConnection con = new SqlConnection(conString);
+
+        string sql = "Update Login set passWord='@NewPassword' where userName='@UserName' and passWord='@OldPassword';";
+
+        SqlCommand cmd = new SqlCommand(sql, con);
+
+        cmd.Parameters.AddWithValue("NewPassword", us.NewPassWord);
+        cmd.Parameters.AddWithValue("UserName", us.UserName);
+        cmd.Parameters.AddWithValue("OldPassWord", us.OldPassWord);      
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
 }
     
 
