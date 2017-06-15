@@ -17,6 +17,11 @@ namespace SnoDrifters
             List<EventsPic> ev = eventContent.getAllEvents();
             rptMain.DataSource = ev;
             rptMain.DataBind();
+
+            ContentManager sponsorContent = new ContentManager();
+            List<Sponsor> sp = sponsorContent.GetAllSponsors();
+            rptSponsor.DataSource = sp;
+            rptSponsor.DataBind();
         }
 
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)

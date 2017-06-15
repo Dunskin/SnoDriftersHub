@@ -240,16 +240,16 @@
                         <h3>Sponsors</h3>
                         <br>
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="img/09.jpg" class="img-responsive"/>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="img/02.jpg" class="img-responsive"/>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="img/03.jpg" class="img-responsive"/>
-                            </div>                        
-                        </div>
+                            <asp:Repeater ID="rptSponsor" runat="server">
+                                <itemtemplate>
+                                    <div class="col-md-6 sponsorlogo">                                 
+                                        <a href='<%#Eval("Website")%>'> 
+                                            <img src='<%#("img/Sponsors/")+Eval("logo")%>' class="img-responsive"/>
+                                        </a> 
+                                    </div>
+                                </itemtemplate>
+                            </asp:Repeater>                        
+                        </div>   
                     </div>
                 </div>
             </div>
@@ -266,10 +266,8 @@
                             <li>
                                 <h4> Mission Statement</h4>
                                 <p>The Moose Jaw Sno-Drifters Snowmobile Club Inc. is an organization made up of citizens from Moose Jaw and the surrounding area.
-
-We as a club promote safe, responsible snowmobiling by attending and hosting various community events. Our main goal is to raise funds to establish a groomed trail system.
-
-A groomed trail system will provide a safe place to ride without any risk of damage to private and public property.
+                                    We as a club promote safe, responsible snowmobiling by attending and hosting various community events. Our main goal is to raise funds to establish a groomed trail system.
+                                    A groomed trail system will provide a safe place to ride without any risk of damage to private and public property.
                                     <a href="Documents/Standard Operating Procedures.pdf" target ="_blank">Standard Operating Procedures</a>
                                     <a href="Documents/Club ByLaws.pdf" target ="_blank"> Club By-Laws</a>
                                 </p>
@@ -277,19 +275,18 @@ A groomed trail system will provide a safe place to ride without any risk of dam
                             <li>
                                 <h4>Membership Types and Fees</h4>
                                 <p>The membership fees of the Sno-Drifters will be set at the AGM.<br />
-            •	Membership year will begin December 1st and expire on November 30th of each year.<br />    
-                Eligibility for Membership - Any individual who is capable and who has attained the
-            age of 16 and who is ordinarily a resident of 
-            Moose Jaw & District, may apply for regular membership.
-            •	Family Membership (2 votes, currently $30)<br />
-            •	Single Membership (1 vote, currently $20)</p>
-           </li>
-           <li>
-           <h4>Application Form To Join MJ Sno-Drifters </h4>
-           <a href="Documents/Sno-Drifters Application Form.pdf" target ="_blank"> Sno-Drifters Application</a>
-           </li>
-            </ul>
-                       
+                                    •	Membership year will begin December 1st and expire on November 30th of each year.<br />    
+                                        Eligibility for Membership - Any individual who is capable and who has attained the
+                                    age of 16 and who is ordinarily a resident of 
+                                    Moose Jaw & District, may apply for regular membership.
+                                    •	Family Membership (2 votes, currently $30)<br />
+                                    •	Single Membership (1 vote, currently $20)</p>
+                            </li>
+                            <li>
+                                <h4>Application Form To Join MJ Sno-Drifters </h4>
+                                <a href="Documents/Sno-Drifters Application Form.pdf" target ="_blank"> Sno-Drifters Application</a>
+                            </li>
+                         </ul>                       
                     </div>
                 </div>
             </div>

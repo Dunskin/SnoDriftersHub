@@ -31,10 +31,9 @@ namespace SnoDrifters
                 smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
-                smtp.Credentials = new System.Net.NetworkCredential("snodrifterssent@gmail.com", "Established69");
-                //Or your Smtp Email ID and Password
+                smtp.Credentials = new System.Net.NetworkCredential("snodrifterssent@gmail.com", "Established69");                
                 smtp.Send(feedBack);
-                Label1.Text = "Thanks for contacting us";
+                //Label1.Text = "Thanks for contacting us";
             //}
             //catch
             //{

@@ -48,8 +48,10 @@
                         <div class="row">
                             <asp:Repeater ID="rptSponsor" runat="server">
                                 <itemtemplate>
-                                    <div class="col-md-4">
-                                        <img src='<%#("img/Sponsors/")+Eval("logo")%>' class="img-responsive"/>
+                                    <div class="col-xs-6 col-md-6 sponsorlogo">                                 
+                                        <a href='<%#Eval("Website")%>'> 
+                                            <img src='<%#("img/Sponsors/")+Eval("logo")%>' class="img-responsive"/>
+                                        </a> 
                                     </div>
                                 </itemtemplate>
                             </asp:Repeater>                        

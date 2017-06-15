@@ -16,6 +16,6 @@ namespace SnoDrifters
             List<Sponsor> sp = sponsorContent.GetAllSponsors();
             rptSponsor.DataSource = sp;
             rptSponsor.DataBind();
-        }
+        }       
     }
 }
