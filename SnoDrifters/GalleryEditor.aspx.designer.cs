@@ -13,6 +13,24 @@ namespace SnoDrifters {
     public partial class GalleryEditor2 {
         
         /// <summary>
+        /// ScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// grdAlbums control.
         /// </summary>
         /// <remarks>
@@ -94,6 +112,51 @@ namespace SnoDrifters {
         protected global::System.Web.UI.WebControls.Button btnSaveAlbum;
         
         /// <summary>
+        /// UploadImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload UploadImages;
+        
+        /// <summary>
+        /// ddlAlbumsPicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAlbumsPicture;
+        
+        /// <summary>
+        /// uploadedFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uploadedFile;
+        
+        /// <summary>
+        /// listofuploadedfiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label listofuploadedfiles;
+        
+        /// <summary>
+        /// lblSelectAlbum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectAlbum;
+        
+        /// <summary>
         /// ddlAlbums control.
         /// </summary>
         /// <remarks>
@@ -110,6 +173,15 @@ namespace SnoDrifters {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlMedia;
+        
+        /// <summary>
+        /// updateGridview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updateGridview;
         
         /// <summary>
         /// grdMedia control.

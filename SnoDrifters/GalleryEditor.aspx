@@ -1,14 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Backend.Master" AutoEventWireup="true" CodeBehind="GalleryEditor.aspx.cs" Inherits="SnoDrifters.GalleryEditor2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <asp:ScriptManager ID="ScriptManager" 
+                   runat="server" />
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
                <div id="editAlbum">
                 <asp:GridView ID="grdAlbums" runat="server" 
-                    AutoGenerateColumns="False" DataSourceID="SqlAlbum" DataKeyNames="Album_Id">
+                    AutoGenerateColumns="False" DataSourceID="SqlAlbum" DataKeyNames="Album_Id" OnRowDeleting="grdAlbums_RowDeleting">
                     <Columns>
-                        <%--<asp:TemplateField ShowHeader="False">
+                        <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete?'); "></asp:LinkButton>
+                                <asp:LinkButton ID="LinkDeleteButtonAlbums" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete? *CAUTION DELETING ALBUM WILL DELETE ALL PICTURES IN THE ALBUM*'); "></asp:LinkButton>
                             </ItemTemplate>
-                        </asp:TemplateField>--%>
+                        </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
@@ -18,7 +22,7 @@
                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Album_Id" HeaderText="Album ID" Visible="false" InsertVisible="False" 
+                        <asp:BoundField DataField="Album_Id" HeaderText="Album ID" Visible="True" InsertVisible="False" 
                             ReadOnly="True" SortExpression="Album_Id"/>
                         
                         <asp:BoundField DataField="Album_Name" HeaderText="Album Name" SortExpression="Album_Name" />
@@ -26,6 +30,8 @@
                         <asp:BoundField DataField="Album_Description" HeaderText="Album Description" SortExpression="Album_Description" />
                     </Columns>
                 </asp:GridView>
+                </ContentTemplate>
+             </asp:UpdatePanel>
                 
                 <asp:SqlDataSource ID="SqlAlbum" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
@@ -37,7 +43,7 @@
                 </asp:SqlDataSource>
 
                 <br />                        
-               
+               </div>
                            
                 <%--<asp:Label ID="albumLabel" runat="server" Text="Select Album"></asp:Label>
                 &nbsp;  
@@ -60,35 +66,53 @@
                 <asp:TextBox ID="txtAlbumDesc" runat="server"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="btnSaveAlbum" runat="server" Text="Add Album" 
-                    OnClick="btnSaveAlbum_Click"/>
-            </div>
+                    OnClick="btnSaveAlbum_Click"/>            
             
-            <br />
-            <br />
+        <br />
+        <br />
 
+        <div>
+            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true"/>
+
+            <asp:DropDownList ID="ddlAlbumsPicture" runat="server" DataSourceID="SqlAlbum" DataTextField="Album_Name" DataValueField="Album_Id">
+            </asp:DropDownList>
+
+            <asp:Button runat="server" ID="uploadedFile" Text="Upload" OnClick="uploadFile_Click"/>
+        <br />
+            <asp:Label ID="listofuploadedfiles" runat="server" />
+        </div>
+
+        <br />
+        <br />
+        
+        <asp:Label ID="lblSelectAlbum" runat="server" Text="Select an Album to view its photo's"></asp:Label>
         <asp:DropDownList ID="ddlAlbums" runat="server" AutoPostBack="True" DataSourceID="SqlMedia"
             DataTextField="Album_Name" DataValueField="Album_Id" AppendDataBoundItems="True">
             <asp:ListItem Text="Select Album" Value="" />
         </asp:DropDownList>
-
-            
-                
+                <br />               
                 <br />            
                 <%-- SQL connection for the Pictures --%>
                 <asp:SqlDataSource ID="SqlMedia" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
                     SelectCommand="SELECT [Album_Id], [Album_Name] FROM [GalleryAlbum_2016]" >                    
                 </asp:SqlDataSource>
-
-
+  
         <div id="editMedia">
-                <asp:GridView ID="grdMedia" runat="server" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True"
-                    AutoGenerateColumns="False" DataSourceID="SqlGetPics" DataKeyNames="Media_Id">
-                    <Columns>                        
+            <asp:UpdatePanel ID="updateGridview" runat="server">
+                <ContentTemplate>
+                <asp:GridView ID="grdMedia" runat="server" AutoGenerateEditButton="True"
+                    AutoGenerateColumns="False" DataSourceID="SqlGetPics" DataKeyNames="Media_Id" OnRowDeleting="grdMedia_RowDeleting">
+                    <Columns>              
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkDeletebuton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete?'); "></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>          
                         <asp:BoundField DataField="Media_Id" HeaderText="Media_Id" SortExpression="Media_Id" InsertVisible="False" ReadOnly="True" Visible="false"/>
                         <asp:BoundField DataField="Album_Id" ItemStyle-Width="10%" HeaderText="Album_Id" InsertVisible="False" ReadOnly="True" SortExpression="Album_Id" Visible="false" >
                         </asp:BoundField>
-                        <asp:ImageField DataImageUrlField="media_link" DataImageUrlFormatString="img/{0}" HeaderText="Picture" ItemStyle-Width="300px" ItemStyle-Height="300px" ControlStyle-CssClass="editmedia">
+                        <asp:ImageField DataImageUrlField="Media_Link" DataImageUrlFormatString="img/{0}" HeaderText="Picture" ReadOnly="True" InsertVisible="False" ItemStyle-Width="45%" ItemStyle-Height="300px" ControlStyle-CssClass="editmedia">
                         </asp:ImageField>
                         <asp:BoundField DataField="File_Type" HeaderText="File_Type" SortExpression="File_Type" InsertVisible="False" ReadOnly="True" Visible="false"/>
                         <asp:BoundField DataField="Media_Sequence" HeaderText="Picture Sequence" SortExpression="Media_Sequence" ItemStyle-Width="15%" />
@@ -98,6 +122,8 @@
                         
                     </Columns>
                 </asp:GridView>
+                </ContentTemplate>
+            </asp:UpdatePanel>
                 <br />
                 
            <%-- Pat start here Friday, need to setup a place to put new photo's in --%>

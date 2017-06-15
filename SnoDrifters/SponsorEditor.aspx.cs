@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,12 +20,11 @@ namespace SnoDrifters
 
         protected void grdSponsor_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int key = Convert.ToInt32(e.Keys["sponsorid"]);            
-
-            ContentManager cm = new ContentManager();
-            cm.deleteSponsor(key);
-            grdSponsor.DataBind();
-            Response.Redirect("SponserEditor.aspx");
+            string fileName = e.Values["Logo"].ToString();
+            if (File.Exists(MapPath("~/" + fileName)))
+            {
+                File.Delete(MapPath("~/" + fileName));
+            }
         }
         protected void grdSponsor_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -79,6 +79,6 @@ namespace SnoDrifters
             }
 
             grdSponsor.DataBind();
-        }                
+        }        
     }
 }

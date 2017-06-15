@@ -68,7 +68,22 @@ using System.Web.Configuration;
             con.Close();
         }
 
-        public void editMedia(Media m)
+        public void addMultipleMedia(Media m)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText =
+                "Insert into Gallery_2016 (Album_Id, Media_Link) Values (@Album_Id, @Media_Link)";
+            cmd.Parameters.AddWithValue("Album_Id", m.AlbumId);            
+            cmd.Parameters.AddWithValue("Media_Link", m.MediaLink);            
+            cmd.Connection = con;
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+    public void editMedia(Media m)
         {
             SqlConnection con = new SqlConnection(conString);
             SqlCommand cmd = new SqlCommand();
