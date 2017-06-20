@@ -18,7 +18,7 @@
 
                 <asp:Label ID="lblTitle" Text="Events Title:" AssociatedControlID="txtEventTitle" runat="server" />
                 <asp:TextBox ID="txtEventTitle" runat="server"></asp:TextBox> 
-                <asp:RequiredFieldValidator ID="reqTextTitle" ControlToValidate="txtEventTitle" Text="(Required)" runat="server" /><br />
+                <%--<asp:RequiredFieldValidator ID="reqTextTitle" ControlToValidate="txtEventTitle" Text="(Required)" runat="server" /><br />--%>
 
                 <asp:Label ID="lblLocation" Text="Location:" AssociatedControlID="txtLocation" runat="server"  />
                 <asp:TextBox ID="txtLocation" runat="server" TextMode="MultiLine" Width="100px" Height="47px"></asp:TextBox><br />
@@ -34,7 +34,66 @@
                <asp:Button ID="btnSaveEvent" runat="server" OnClick="btnInsert_Click" Text="Add Event" Width="100px" /> 
                       
             
-        </asp:Panel>
             
-                </div>
+        </asp:Panel>
+
+         <br />
+         <br />
+         <div class="sponimg">
+         <asp:GridView ID="grdEvents" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="true" DataKeyNames="Id" DataSourceID="sqlGetEvents">
+             <Columns>                 
+                 <asp:TemplateField ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="LinkDeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete?'); "></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                 <asp:BoundField DataField="Id" HeaderText="Id" Visible="false" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                 <asp:BoundField DataField="day" HeaderText="Day" SortExpression="day" />
+                 <asp:BoundField DataField="month" HeaderText="Month" SortExpression="month" />
+                 <asp:BoundField DataField="year" HeaderText="Year" SortExpression="year" />
+                 <asp:BoundField DataField="title" HeaderText="Title" SortExpression="title" />
+                 <asp:ImageField DataImageUrlField="MediaLink" DataImageUrlFormatString="img/{0}" ReadOnly="true" InsertVisible="false">
+                 </asp:ImageField>
+                 <asp:BoundField DataField="description" HeaderText="Description" SortExpression="description" />                 
+                 <asp:BoundField DataField="location" HeaderText="Location" SortExpression="location" />
+             </Columns>
+         </asp:GridView>
+
+         <asp:SqlDataSource ID="sqlGetEvents" runat="server" ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
+             SelectCommand="SELECT [Id], [day], [month], [year], [title], [description], [MediaLink], [location] FROM [EventsPic]" 
+             ConflictDetection="CompareAllValues" 
+             DeleteCommand="DELETE FROM [EventsPic] WHERE [Id] = @original_Id"
+             OldValuesParameterFormatString="original_{0}" 
+             UpdateCommand="UPDATE [EventsPic] SET [day] = @day, [month] = @month, [year] = @year, [title] = @title, [description] = @description, [location] = @location WHERE [Id] = @original_Id">
+             <DeleteParameters>
+                 <asp:Parameter Name="original_Id" Type="Int32" />
+                 <asp:Parameter Name="original_day" Type="Int32" />
+                 <asp:Parameter Name="original_month" Type="String" />
+                 <asp:Parameter Name="original_year" Type="Int32" />
+                 <asp:Parameter Name="original_title" Type="String" />
+                 <asp:Parameter Name="original_description" Type="String" />
+                 <asp:Parameter Name="original_MediaLink" Type="String" />
+                 <asp:Parameter Name="original_location" Type="String" />
+             </DeleteParameters>             
+             <UpdateParameters>
+                 <asp:Parameter Name="day" Type="Int32" />
+                 <asp:Parameter Name="month" Type="String" />
+                 <asp:Parameter Name="year" Type="Int32" />
+                 <asp:Parameter Name="title" Type="String" />
+                 <asp:Parameter Name="description" Type="String" />
+                 <asp:Parameter Name="MediaLink" Type="String" />
+                 <asp:Parameter Name="location" Type="String" />
+                 <asp:Parameter Name="original_Id" Type="Int32" />
+                 <asp:Parameter Name="original_day" Type="Int32" />
+                 <asp:Parameter Name="original_month" Type="String" />
+                 <asp:Parameter Name="original_year" Type="Int32" />
+                 <asp:Parameter Name="original_title" Type="String" />
+                 <asp:Parameter Name="original_description" Type="String" />
+                 <asp:Parameter Name="original_MediaLink" Type="String" />
+                 <asp:Parameter Name="original_location" Type="String" />
+             </UpdateParameters>
+         </asp:SqlDataSource>
+             </div>
+    </div>
+
 </asp:Content>

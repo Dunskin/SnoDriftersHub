@@ -39,7 +39,7 @@
     <![endif]-->
     <!--Events Scripts and CSS -->     
     <link href="css/events.css" rel="stylesheet" />
-     <link href="style.css" rel="stylesheet" type="text/css" />
+     
 
      <script src="js/event.js"></script>
      <script src="js/jquery.flexisel.js" type="text/javascript"></script>
@@ -58,8 +58,7 @@
             $('#myCarousel').carousel();
         });
     </script>
-
-
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>    
@@ -131,53 +130,38 @@
                 <h3>Events</h3>
                 <hr>
             </div>
-
+    
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">  
-    <!--Main Repeater -->
-    <asp:Repeater ID= "rptMain" runat="server" OnItemDataBound="OnItemDataBound">  
-        <ItemTemplate>
-              <ol class="carousel-indicators" >
-                    <%--<asp:Repeater ID="rptIndicators" runat="server">
-                        <ItemTemplate>--%>
-                            <li data-target="#myCarousel" data-slide-to='<%# Container.ItemIndex%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>
-                           <%-- <%#Eval("Day")%>--%>
-                            </li>
-                        <%--</ItemTemplate>
-                    </asp:Repeater>--%>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <asp:Repeater ID="rptSlides" runat="server">
-                        <ItemTemplate>
-                            <div <%# Container.ItemIndex == 0 ? "class=\"item active\"" : "class=\"item\"" %>>
-                                <div class="fill" background-image: url(./img/"+MediaLink+") <%#((EventsPic)Container.DataItem).RenderForCarousel()%>;">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2><%#Eval("Title")%></h2>
-                                    <h3><%#Eval("Month ")%><%#Eval("Day ")%><%#Eval("Year")%></h3>
-                                    <small><%#Eval("Description ")%><%#Eval(" Location")%></small>
-                                </div>
+           
+        <ol class="carousel-indicators" >
+            <asp:Repeater ID="rptIndicators" runat="server">
+                <ItemTemplate>
+                    <li data-target="#myCarousel" data-slide-to='<%# (Container.ItemIndex)%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>                    
+                    </li>
+                </ItemTemplate>
+            </asp:Repeater>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <asp:Repeater ID="rptSlides" runat="server">
+                <ItemTemplate>
+                    <div class="item <%# (Container.ItemIndex == 0 ? "active" : "") %>">
+                        <div class="fill" background-image: url(./img/"+MediaLink+") <%#((EventsPic)Container.DataItem).RenderForCarousel()%>;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption-css">
+                            <h2><%#Eval("Title")%></h2>
+                            <h5><%#Eval("Month")%>/<%#Eval("Day")%>/<%#Eval("Year")%></h5>
+                            <small><%#Eval("Location")%></small>
+                            <br />
+                            <small><%#Eval("Description ")%></small>
                             </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-            </ItemTemplate>
-       
-
-    </asp:Repeater>
-               
-
-         <!--Left and Right controls -->
-
-      <%--<a class="left carousel-control" href="#myCarousel"  data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-      </a>
-
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-       </a>--%>
+                        </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>           
             
-        </div>
+    </div>
+
     </div>
         </div>
     <div id="tf-gallery">
@@ -239,7 +223,8 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
                         <h3>Sponsors</h3>
-                        <br>
+                        <br />
+                        <br />
                         <div class="row">
                             <asp:Repeater ID="rptSponsor" runat="server">
                                 <itemtemplate>
@@ -261,6 +246,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
+                        <br />
+                        <br />
                         <h3>Club Info</h3>
                         <br>
                         <ul class="list-inline why-me">
@@ -315,7 +302,7 @@
                 <hr>
             </div>
             <div class="space"></div>
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <form id="contact" runat="server">
                         <div class="form-group">
@@ -333,19 +320,12 @@
                         <button type="submit" class="btn btn-primary my-btn dark">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
     <nav id="tf-footer">
         <div class="container">   
-             <a href="AdminPageHome.aspx">Admin Login</a>  
-              <div class="pull-right">                 
-                <ul class="social-media list-inline">
-                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fa fa-youtube"></span></a></li>                                      
-                </ul>
-            </div>       
+             <a href="AdminPageHome.aspx">Admin Login</a>   
             
         </div>
     </nav>
