@@ -86,7 +86,6 @@
     <Content Include="fonts\fonts-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GalleryEditor.aspx" />
-    <Content Include="galleryPhotos.aspx" />
     <Content Include="img\01.jpg" />
     <Content Include="img\02.jpg" />
     <Content Include="img\03.jpg" />
@@ -216,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SponsorEditor.aspx" />
-    <Content Include="SponsorsTest.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -279,13 +277,6 @@
     </Compile>
     <Compile Include="GalleryEditor.aspx.designer.cs">
       <DependentUpon>GalleryEditor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="galleryPhotos.aspx.cs">
-      <DependentUpon>galleryPhotos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="galleryPhotos.aspx.designer.cs">
-      <DependentUpon>galleryPhotos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
@@ -381,13 +372,6 @@
     </Compile>
     <Compile Include="SponsorEditor.aspx.designer.cs">
       <DependentUpon>SponsorEditor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SponsorsTest.aspx.cs">
-      <DependentUpon>SponsorsTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SponsorsTest.aspx.designer.cs">
-      <DependentUpon>SponsorsTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Youtube.aspx.cs">
       <DependentUpon>Youtube.aspx</DependentUpon>

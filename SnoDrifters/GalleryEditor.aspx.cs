@@ -17,10 +17,10 @@ namespace SnoDrifters
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["userName"] == null)
-            //{
-            //    Response.Redirect("BackendLogin.aspx");
-            //}
+            if (Session["userName"] == null)
+            {
+                Response.Redirect("BackendLogin.aspx");
+            }
         }
 
         protected void uploadFile_Click(object sender, EventArgs e)
