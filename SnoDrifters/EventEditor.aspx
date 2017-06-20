@@ -5,7 +5,7 @@
           
         <asp:Panel ID="eventsPanel" 
             runat="server" 
-            GroupingText="Event Editor">
+            GroupingText="Add an Event">
                          
                 <asp:Label ID="lblDay" Text="Day:" AssociatedControlID="txtDay" runat="server" /> 
                 <asp:TextBox ID="txtDay" runat="server" Width="100px"></asp:TextBox>
@@ -31,10 +31,25 @@
                 <asp:FileUpload ID="imgEventPic" runat="server" Width="247px" Height="19px" />  <br />
                                                
                <!--Save Event --> 
-               <asp:Button ID="btnSaveEvent" runat="server" OnClick="btnInsert_Click" Text="Add Event" Width="100px" /> 
-                      
+               <asp:Button ID="btnSaveEvent" runat="server" OnClick="btnInsert_Click" Text="Add Event" Width="100px" />
+                                 
             
         </asp:Panel>
+
+        <br />
+
+         <asp:Panel ID="deleteEventPanel"
+             runat="server"
+             GroupingText="Delete an Event">
+              
+
+             
+         <asp:DropDownList ID="ddlEventsToDelete" runat="server" DataSourceID="SqlDataSource1" DataTextField="title" DataValueField="Id">
+</asp:DropDownList>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" SelectCommand="SELECT [Id], [title] FROM [EventsPic]"></asp:SqlDataSource>
+             <asp:Button ID="Button1" runat="server" CausesValidation="true" OnClientClick="return confirm('Event Deleted')" Text="Delete Event" />
+         </asp:Panel>
+
             
                 </div>
 </asp:Content>

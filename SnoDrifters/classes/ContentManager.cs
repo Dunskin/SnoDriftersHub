@@ -11,7 +11,6 @@ using System.Web.Configuration;
     {
      public List<Sponsor> GetAllSponsors()
         {
-
             List<Sponsor> sponsors = new List<Sponsor>();
 
             string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
@@ -128,7 +127,6 @@ using System.Web.Configuration;
         con.Close();
 
     }
-
     public List<EventsPic> getAllEvents()
 
     {

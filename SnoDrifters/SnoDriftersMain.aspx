@@ -132,18 +132,21 @@
                 <hr>
             </div>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
+         
     <!--Main Repeater -->
+
     <asp:Repeater ID= "rptMain" runat="server" OnItemDataBound="OnItemDataBound">  
         <ItemTemplate>
               <ol class="carousel-indicators" >
-                    <%--<asp:Repeater ID="rptIndicators" runat="server">
-                        <ItemTemplate>--%>
+
+                    <asp:Repeater ID="rptIndicators" runat="server" >
+                        <ItemTemplate>
                             <li data-target="#myCarousel" data-slide-to='<%# Container.ItemIndex%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>
                            <%-- <%#Eval("Day")%>--%>
                             </li>
-                        <%--</ItemTemplate>
-                    </asp:Repeater>--%>
+                      </ItemTemplate>
+                    </asp:Repeater>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <asp:Repeater ID="rptSlides" runat="server">

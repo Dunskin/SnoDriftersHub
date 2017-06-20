@@ -22,10 +22,7 @@ public class Contact
     
     public Contact()
 	{
-		//
-		// TODO: Add constructor logic here
-		//
-
+		
 	}
 
     public Contact(int id, string name, string email, string phone, string city, string province, string country, string postalcode, string address1, string address2)

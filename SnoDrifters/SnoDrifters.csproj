@@ -249,12 +249,12 @@
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="classes\Album.cs" />
-    <Compile Include="classes\Contact.cs" />
+    <Compile Include="oldfiles\Contact.cs" />
     <Compile Include="classes\ContentManager.cs" />
-    <Compile Include="classes\Events.cs" />
+    <Compile Include="oldfiles\Events.cs" />
     <Compile Include="classes\EventsPic.cs" />
     <Compile Include="classes\Gallery.cs" />
-    <Compile Include="classes\Login.cs" />
+    <Compile Include="oldfiles\Login.cs" />
     <Compile Include="classes\Media.cs" />
     <Compile Include="classes\Sponsor.cs" />
     <Compile Include="Email.aspx.cs">
