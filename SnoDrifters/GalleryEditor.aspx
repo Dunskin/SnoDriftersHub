@@ -5,7 +5,7 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                <div id="editAlbum">
-                <asp:GridView ID="grdAlbums" runat="server" 
+                <asp:GridView ID="grdAlbums" runat="server"
                     AutoGenerateColumns="False" DataSourceID="SqlAlbum" DataKeyNames="Album_Id" OnRowDeleting="grdAlbums_RowDeleting">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
@@ -30,54 +30,76 @@
                         <asp:BoundField DataField="Album_Description" HeaderText="Album Description" SortExpression="Album_Description" />
                     </Columns>
                 </asp:GridView>
+                </div>
                 </ContentTemplate>
              </asp:UpdatePanel>
                 
-                <asp:SqlDataSource ID="SqlAlbum" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
-                    SelectCommand="SELECT * FROM [GalleryAlbum_2016]" 
-                    DeleteCommand="Delete from [GalleryAlbum_2016] where Album_Id=@Album_Id" UpdateCommand="UPDATE [GalleryAlbum_2016] SET [Album_Name] = @Album_Name, [Album_Sequence] = @Album_Sequence, [Album_Description] = @Album_Description where Album_Id=@Album_Id">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Album_Id" Type="Int32" />
-                    </DeleteParameters>
-                </asp:SqlDataSource>
+                
 
-                <br />                        
-               </div>
-                           
-                <%--<asp:Label ID="albumLabel" runat="server" Text="Select Album"></asp:Label>
-                &nbsp;  
-                
-                <asp:DropDownList ID="ddlSelectAlbum1" runat="server" DataSourceID="SqlAlbum" 
-                    DataTextField="Album_Name" DataValueField="Album_Id">
-                </asp:DropDownList>--%>
-                
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="albumNameLabel" runat="server" Text="Enter New Album Name"></asp:Label>
-                &nbsp;  
-                <asp:TextBox ID="txtAlbumName" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="albumSequenceLabel" runat="server" Text="Album Sequence"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtAlbumSeq" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="albumDescriptionLabel" runat="server" Text="Album Description"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtAlbumDesc" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnSaveAlbum" runat="server" Text="Add Album" 
-                    OnClick="btnSaveAlbum_Click"/>            
-            
+                <br />  
+        <h3>     
+            Create new album
+        </h3>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Label ID="albumNameLabel" runat="server" Text="Enter New Album Name"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtAlbumName" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="albumSequenceLabel" runat="server" Text="Album Sequence"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtAlbumSeq" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="albumDescriptionLabel" runat="server" Text="Album Description"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtAlbumDesc" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <asp:Button ID="btnSaveAlbum" runat="server" Text="Add Album" 
+                            OnClick="btnSaveAlbum_Click"/> 
+                        </td>
+                    </tr>
+                </table>     
         <br />
         <br />
-
+        
+    <h3>
+        Upload new pictures
+    </h3>
         <div>
-            <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true"/>
-
-            <asp:DropDownList ID="ddlAlbumsPicture" runat="server" DataSourceID="SqlAlbum" DataTextField="Album_Name" DataValueField="Album_Id">
-            </asp:DropDownList>
-
-            <asp:Button runat="server" ID="uploadedFile" Text="Upload" OnClick="uploadFile_Click"/>
+            <table>                
+                <tr>
+                    <td>
+                        Choose pictures to upload:&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <asp:FileUpload runat="server" ID="UploadImages" AllowMultiple="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Choose Album to upload pictures to:
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlAlbumsPicture" runat="server" DataSourceID="SqlAlbum" DataTextField="Album_Name" DataValueField="Album_Id">
+                        </asp:DropDownList>
+                        <asp:Button runat="server" ID="uploadedFile" Text="Upload" OnClick="uploadFile_Click"/>
+                    </td>                    
+                </tr>
+            </table>
+            
         <br />
             <asp:Label ID="listofuploadedfiles" runat="server" />
         </div>
@@ -86,17 +108,13 @@
         <br />
         
         <asp:Label ID="lblSelectAlbum" runat="server" Text="Select an Album to view its photo's"></asp:Label>
-        <asp:DropDownList ID="ddlAlbums" runat="server" AutoPostBack="True" DataSourceID="SqlMedia"
+        <asp:DropDownList ID="ddlAlbums" runat="server" AutoPostBack="True" DataSourceID="SqlGetAlbums"
             DataTextField="Album_Name" DataValueField="Album_Id" AppendDataBoundItems="True">
             <asp:ListItem Text="Select Album" Value="" />
         </asp:DropDownList>
                 <br />               
                 <br />            
-                <%-- SQL connection for the Pictures --%>
-                <asp:SqlDataSource ID="SqlMedia" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
-                    SelectCommand="SELECT [Album_Id], [Album_Name] FROM [GalleryAlbum_2016]" >                    
-                </asp:SqlDataSource>
+                
   
         <div id="editMedia">
             <asp:UpdatePanel ID="updateGridview" runat="server">
@@ -124,29 +142,25 @@
                 </asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
-                <br />
-                
-           <%-- Pat start here Friday, need to setup a place to put new photo's in --%>
-                <%--<asp:Label ID="lblPicName" runat="server" Text="Enter New Picture Name"></asp:Label>
-                &nbsp;  
-                <asp:TextBox ID="txtPicName" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="lblPicSeq" runat="server" Text="Picture Sequence"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtPicSeq" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="lblPicCap" runat="server" Text="Picture Caption"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtPicCap" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnInsertPicture" runat="server" Text="Add Photo" 
-                    OnClick="btnSavePhoto_Click"/>--%>
-               <%--<asp:Label ID="Label3" runat="server" Text="Select Picture"></asp:Label>
-                &nbsp;  
-                <asp:DropDownList ID="ddlSelectPicture" runat="server" DataSourceID="SqlGetPics" 
-                    DataTextField="Media_Link" DataValueField="Media_Id">
-                </asp:DropDownList>--%>
-                <asp:SqlDataSource ID="SqlGetPics" runat="server" 
+                <br />    
+
+            <asp:SqlDataSource ID="SqlAlbum" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
+                    SelectCommand="SELECT * FROM [GalleryAlbum_2016]" 
+                    DeleteCommand="Delete from [GalleryAlbum_2016] where Album_Id=@Album_Id" 
+                    UpdateCommand="UPDATE [GalleryAlbum_2016] SET [Album_Name] = @Album_Name, [Album_Sequence] = @Album_Sequence, [Album_Description] = @Album_Description where Album_Id=@Album_Id">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Album_Id" Type="Int32" />
+                    </DeleteParameters>
+                </asp:SqlDataSource>
+
+            <%-- SQL connection for the Drop Down List to find Albums --%>
+                <asp:SqlDataSource ID="SqlGetAlbums" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
+                    SelectCommand="SELECT [Album_Id], [Album_Name] FROM [GalleryAlbum_2016]" >                    
+                </asp:SqlDataSource>
+                        
+           <asp:SqlDataSource ID="SqlGetPics" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
                     SelectCommand="SELECT * FROM [Gallery_2016] WHERE ([Album_Id] = @Album_Id)" 
                     DeleteCommand="DELETE FROM [Gallery_2016] WHERE [Media_Id] = @original_Media_Id" 
@@ -177,72 +191,12 @@
                         <asp:Parameter Name="original_Media_Id" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
+                
                 &nbsp;&nbsp;&nbsp;
                 
                 &nbsp;&nbsp;&nbsp;
-                <%--<asp:Label ID="Label5" runat="server" Text="Caption"></asp:Label>
-                &nbsp;  
-                <asp:TextBox ID="txtPicCap" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label6" runat="server" Text="Date"></asp:Label>
-                &nbsp;  
-                <asp:TextBox ID="txtPicDate" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label7" runat="server" Text="Sequence"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtPicSequence" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
                 
-                <br />
-                
-                <asp:Button ID="btnSelectPic" runat="server" Text="Select Picture" 
-                    OnClick="btnSelectPic_Click" />
-                &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnSavePic" runat="server" Text="Save Changes" 
-                    OnClick="btnSavePic_Click" OnClientClick ="editMessage()" />
-            
-                <br />
-                <br />
-            
-                <asp:Label ID="Label8" runat="server" Text="Select Video"></asp:Label>
-                &nbsp;
-                <asp:DropDownList ID="ddlSelectVideo" runat="server" DataSourceID="SqlGetVids" 
-                    DataTextField="Media_Link" DataValueField="Media_Id">
-                </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlGetVids" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:snowdriftersdbConnectionString %>" 
-                    SelectCommand="SELECT [Media_Id], [Media_Link] FROM [Gallery_2016] WHERE ([File_Type] = @File_Type)">
-                    <SelectParameters>
-                        <asp:QueryStringParameter Name="File_Type" QueryStringField="Video" 
-                            Type="String" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
-                &nbsp;&nbsp;&nbsp;
-                
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label10" runat="server" Text="Caption"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtVidCap" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label11" runat="server" Text="Date"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtVidDate" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label12" runat="server" Text="Sequence"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtVidSequence" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label13" runat="server" Text="Enter URL"></asp:Label>
-                &nbsp;
-                <asp:TextBox ID="txtURL" runat="server"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnInsertVid" runat="server" Text="Insert Video" />
-                &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnSaveVid" runat="server" Text="Save Changes" 
-                    OnClick="btnSaveVid_Click" OnClientClick ="editMessage()"/>--%>
             </div>
-
             <br />
-            <br />
-            <%--<asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back" /> --%>     
+            <br />                 
 </asp:Content>

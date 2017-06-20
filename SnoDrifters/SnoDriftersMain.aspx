@@ -37,8 +37,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--Events Scripts and CSS -->
-     <link href="css/events.css" rel="stylesheet" />
+    <!--Events Scripts and CSS -->     
+    <link href="css/events.css" rel="stylesheet" />
      <link href="style.css" rel="stylesheet" type="text/css" />
 
      <script src="js/event.js"></script>
@@ -52,6 +52,7 @@
      <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'
         media="screen" /> 
      <script type="text/javascript" src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+    
     <script type="text/javascript">
         $(function () {
             $('#myCarousel').carousel();
@@ -76,7 +77,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand logo" href="index.html"><img src="img/SnoDrifters/MJSNOWGUY_Logo.png" /></a>
+                        <a class="navbar-brand logo" href="SnoDriftersMain.html"><img src="img/SnoDrifters/MJSNOWGUY_Logo.png" /></a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -136,13 +137,13 @@
     <asp:Repeater ID= "rptMain" runat="server" OnItemDataBound="OnItemDataBound">  
         <ItemTemplate>
               <ol class="carousel-indicators" >
-                    <asp:Repeater ID="rptIndicators" runat="server">
-                        <ItemTemplate>
+                    <%--<asp:Repeater ID="rptIndicators" runat="server">
+                        <ItemTemplate>--%>
                             <li data-target="#myCarousel" data-slide-to='<%# Container.ItemIndex%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>
                            <%-- <%#Eval("Day")%>--%>
                             </li>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                        <%--</ItemTemplate>
+                    </asp:Repeater>--%>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <asp:Repeater ID="rptSlides" runat="server">
@@ -166,7 +167,7 @@
 
          <!--Left and Right controls -->
 
-<%--      <a class="left carousel-control" href="#myCarousel"  data-slide="prev">
+      <%--<a class="left carousel-control" href="#myCarousel"  data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
       </a>

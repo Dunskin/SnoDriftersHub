@@ -40,15 +40,6 @@ namespace SnoDrifters {
         protected global::System.Web.UI.WebControls.GridView grdAlbums;
         
         /// <summary>
-        /// SqlAlbum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlAlbum;
-        
-        /// <summary>
         /// albumNameLabel control.
         /// </summary>
         /// <remarks>
@@ -166,15 +157,6 @@ namespace SnoDrifters {
         protected global::System.Web.UI.WebControls.DropDownList ddlAlbums;
         
         /// <summary>
-        /// SqlMedia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlMedia;
-        
-        /// <summary>
         /// updateGridview control.
         /// </summary>
         /// <remarks>
@@ -191,6 +173,24 @@ namespace SnoDrifters {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdMedia;
+        
+        /// <summary>
+        /// SqlAlbum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlAlbum;
+        
+        /// <summary>
+        /// SqlGetAlbums control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlGetAlbums;
         
         /// <summary>
         /// SqlGetPics control.

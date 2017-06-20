@@ -23,7 +23,10 @@
     <asp:TextBox runat="server" id="passWord" textmode="Password"></asp:TextBox>    
         
     <asp:button type="submit" id="loginButton" runat="server" Text="Login" OnClick="loginButton_Click"/>
-  </div>
+      <br />
+      <br />
+      <a href="SnoDriftersMain.aspx">Back to main site</a>
+      </div>
   
   
 </form>

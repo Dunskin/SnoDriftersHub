@@ -54,17 +54,16 @@ namespace SnoDrifters
         {
             SqlConnection con = new SqlConnection(conString);
             SqlCommand cmd = new SqlCommand();
-
-            string test = e.Values["Album_Id"].ToString();
+            
             cmd.CommandText =
                 "Delete from Gallery_2016 where Album_Id = @Album_Id";
-            cmd.Parameters.AddWithValue("Album_Id", e.Values["Album_Id"].ToString());
+            cmd.Parameters.AddWithValue("Album_Id", e.Keys["Album_Id"].ToString());
 
             cmd.Connection = con;
 
             con.Open();
             cmd.ExecuteNonQuery();
-            con.Close();
+            con.Close();                     
         }
 
 
@@ -99,33 +98,6 @@ namespace SnoDrifters
             {
                 File.Delete(MapPath("~/" + fileName));
             }
-        }        
-
-        //protected void btnSelectPic_Click(object sender, EventArgs e)
-        //{
-        //    //Opens Pictures
-        //}
-
-        //protected void btnSavePic_Click(object sender, EventArgs e)
-        //{
-        //    Media m = new Media();
-        //    //p.MediaSeq = Convert.ToInt32(txtPicSequence.Text);
-        //    //p.PicLink = FileName;
-        //    m.Caption = txtPicCap.Text;
-
-        //    Gallery g = new Gallery();
-        //    g.editMedia(m);
-        //}
-
-        //protected void btnSaveVid_Click(object sender, EventArgs e)
-        //{
-        //    Media m = new Media();
-        //    //m.MediaSeq = Convert.ToInt32(txtVidSequence.Text);
-        //    m.MediaLink = txtURL.Text;
-        //    m.Caption = txtVidCap.Text;
-
-        //    Gallery g = new Gallery();
-        //    g.editMedia(m);
-        //}
+        }                        
     }
 }
