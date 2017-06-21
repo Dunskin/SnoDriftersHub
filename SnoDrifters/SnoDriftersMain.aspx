@@ -317,7 +317,7 @@
                         <div class="form-group">
                             <asp:TextBox class="form-control" ID="txtMessage" runat="server" placeholder="Enter Message"/>
                         </div>
-                        <button type="submit" class="btn btn-primary my-btn dark">Submit</button>
+                        <button id="btnSendEmail" type="submit" class="btn btn-primary my-btn dark" onclick="btnSendEmail_Click">Submit</button>
                     </form>
                 </div>
             </div>--%>

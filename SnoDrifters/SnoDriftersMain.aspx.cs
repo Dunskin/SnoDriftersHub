@@ -55,7 +55,7 @@ namespace SnoDrifters
         //    smtp.Send(fromAddress, toAddress, subject, body);
         //}
 
-        //protected void Button1_Click(object sender, EventArgs e)
+        //protected void btnSendEmail_Click(object sender, EventArgs e)
         //{
         //    //try
         //    //{

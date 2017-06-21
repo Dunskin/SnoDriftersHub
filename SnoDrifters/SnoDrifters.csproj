@@ -205,7 +205,6 @@
     <Content Include="fonts\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Backend.Master" />
     <Content Include="SnoDriftersMain.aspx" />
-    <Content Include="Youtube.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -372,13 +371,6 @@
     </Compile>
     <Compile Include="SponsorEditor.aspx.designer.cs">
       <DependentUpon>SponsorEditor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Youtube.aspx.cs">
-      <DependentUpon>Youtube.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Youtube.aspx.designer.cs">
-      <DependentUpon>Youtube.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
