@@ -11,7 +11,6 @@ using System.Web.Configuration;
     {
      public List<Sponsor> GetAllSponsors()
         {
-
             List<Sponsor> sponsors = new List<Sponsor>();
 
             string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
@@ -128,7 +127,6 @@ using System.Web.Configuration;
         con.Close();
 
     }
-
     public List<EventsPic> getAllEvents()
 
     {
@@ -225,6 +223,38 @@ using System.Web.Configuration;
         con.Close();
         return count;
     }
+    public List<Media> GetFirstPhotoInAlbum()
+    {
+        string conString = WebConfigurationManager.ConnectionStrings["snowdriftersdbConnectionString"].ConnectionString;
+        SqlConnection con = new SqlConnection(conString);
+
+        SqlCommand cmd = new SqlCommand();
+
+        cmd.Connection = con;
+
+
+        cmd.CommandText = "SELECT GalleryAlbum_2016.Album_Id as AlbumId, MAX(Gallery_2016.Media_Link) as MediaLink FROM Gallery_2016 INNER JOIN GalleryAlbum_2016 ON GalleryAlbum_2016.Album_Id=Gallery_2016.Album_id GROUP BY GalleryAlbum_2016.Album_Id";
+
+        con.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        List<Media> albumGallery = new List<Media>();
+
+        while (reader.Read())
+        {
+            Media m = new Media();
+            m.MediaLink = reader["MediaLink"].ToString();
+            m.AlbumId = Convert.ToInt32(reader["AlbumId"].ToString());
+
+            albumGallery.Add(m);
+        }
+        con.Close();
+
+        return albumGallery;
+
+    }
+
 }
     
 

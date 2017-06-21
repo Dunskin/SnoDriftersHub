@@ -124,8 +124,10 @@
             </div>            
         </div>
     </div>
+
+
     <div id="tf-events">
-        <div class="container">
+         <div class="container">
             <div class="section-title">
                 <h3>Events</h3>
                 <hr>
@@ -164,57 +166,48 @@
 
     </div>
         </div>
+
+        
+
     <div id="tf-gallery">
         <div class="container">
             <div class="section-title">
                 <h3>Gallery</h3>
                 <hr>
             </div>
-            <div class="space"></div>
-            <div class="row">
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/09.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/02.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/03.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/03.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/02.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/09.jpg" class="img-responsive">
-                </div>
-            </div>
-            <div class="row toppadding">
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/04.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/05.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/06.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/06.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/05.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/04.jpg" class="img-responsive">
-                </div>
-            </div>
-            <ul class="pager">
-                <li class="previous"><a href="#">Previous</a></li>
-                <li class="next"><a href="#">Next</a></li>
-            </ul>
+
+<asp:DataList ID="dtlGallery" 
+        DataKeyField="albumId"
+        DataKeyName="albumId"
+        runat="server"
+        RepeatColumns = "5"
+        RepeatDirection ="Horizontal"
+        BorderStyle="None" 
+        BorderWidth="2px"
+        CellPadding="5"
+        CellSpacing="5">
+
+         <ItemTemplate>
+        
+            <asp:HyperLink ID="test" 
+                         runat="server"
+                         NavigateUrl='<%# Bind("albumid", "SnowDriftersGallery.aspx?id={0}") %>'>
+
+                 <asp:Image ID="TestLink2" 
+                 runat="server" 
+                 OnClick="TestLink2_Click"
+                 Width="300px" Height="200px" 
+                 ImageUrl='<%# Bind("mediaLink", "~/img/{0}") %>' 
+                 style="padding-left:40px"  />   
+     
+            </asp:HyperLink>
+
+         </ItemTemplate>
+    </asp:DataList>
+
+  
+
+
         </div>
     </div>
     <div id="tf-sponsors">

@@ -73,5 +73,16 @@ namespace SnoDrifters
           
 
         }
-    }
-    }
+
+        //Delete Event Click Event 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ContentManager cm = new ContentManager();
+           
+
+            ListItem deleteItem = ddlEventsToDelete.Items.FindByValue("value");
+            ddlEventsToDelete.Items.Remove(deleteItem); 
+        }
+
+       }
+}

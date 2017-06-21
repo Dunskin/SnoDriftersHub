@@ -10,42 +10,33 @@
 namespace SnoDrifters {
     
     
-    public partial class SnoDriftersMain {
+    public partial class SnowDriftersGallery {
         
         /// <summary>
-        /// rptIndicators control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptIndicators;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// rptSlides control.
+        /// dtlGalleryPhotos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSlides;
+        protected global::System.Web.UI.WebControls.DataList dtlGalleryPhotos;
         
         /// <summary>
-        /// dtlGallery control.
+        /// sqlGalleryPhotos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtlGallery;
-        
-        /// <summary>
-        /// rptSponsor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSponsor;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlGalleryPhotos;
     }
 }
