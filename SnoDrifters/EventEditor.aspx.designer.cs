@@ -94,15 +94,6 @@ namespace SnoDrifters {
         protected global::System.Web.UI.WebControls.TextBox txtEventTitle;
         
         /// <summary>
-        /// reqTextTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTextTitle;
-        
-        /// <summary>
         /// lblLocation control.
         /// </summary>
         /// <remarks>
@@ -166,21 +157,33 @@ namespace SnoDrifters {
         protected global::System.Web.UI.WebControls.Button btnSaveEvent;
         
         /// <summary>
+<<<<<<< HEAD
         /// deleteEventPanel control.
+=======
+        /// grdEvents control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Panel deleteEventPanel;
         
         /// <summary>
         /// ddlEventsToDelete control.
+=======
+        protected global::System.Web.UI.WebControls.GridView grdEvents;
+        
+        /// <summary>
+        /// sqlGetEvents control.
+>>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.DropDownList ddlEventsToDelete;
         
         /// <summary>
@@ -200,5 +203,8 @@ namespace SnoDrifters {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+=======
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlGetEvents;
+>>>>>>> origin/master
     }
 }

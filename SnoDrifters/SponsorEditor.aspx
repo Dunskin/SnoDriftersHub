@@ -58,7 +58,7 @@
                             <asp:LinkButton ID="LinkDeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete?'); "></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="SponsorId" Visible="False" HeaderText="SponsorId" InsertVisible="False" ReadOnly="True" SortExpression="SponsorId" />
+                    <asp:BoundField DataField="SponsorId" HeaderText="SponsorId" Visible="False" InsertVisible="False" ReadOnly="True" SortExpression="SponsorId" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="ShortDescription" HeaderText="ShortDescription" SortExpression="ShortDescription" />
                     <asp:ImageField DataImageUrlField="Logo" DataImageUrlFormatString="img/Sponsors/{0}" ReadOnly="true" InsertVisible="false">

@@ -120,7 +120,7 @@
             <asp:UpdatePanel ID="updateGridview" runat="server">
                 <ContentTemplate>
                 <asp:GridView ID="grdMedia" runat="server" AutoGenerateEditButton="True"
-                    AutoGenerateColumns="False" DataSourceID="SqlGetPics" DataKeyNames="Media_Id" OnRowDeleting="grdMedia_RowDeleting">
+                    AutoGenerateColumns="False" DataSourceID="SqlGetPics" DataKeyNames="Media_Id" OnRowDeleting="grdMedia_RowDeleting" AllowPaging="True">
                     <Columns>              
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>

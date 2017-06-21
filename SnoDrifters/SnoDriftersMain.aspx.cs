@@ -15,8 +15,10 @@ namespace SnoDrifters
         {
             ContentManager eventContent = new ContentManager();
             List<EventsPic> ev = eventContent.getAllEvents();
-            rptMain.DataSource = ev;
-            rptMain.DataBind();
+            rptIndicators.DataSource = ev;
+            rptIndicators.DataBind();
+            rptSlides.DataSource = ev;
+            rptSlides.DataBind();
 
             ContentManager sponsorContent = new ContentManager();
             List<Sponsor> sp = sponsorContent.GetAllSponsors();
@@ -24,6 +26,7 @@ namespace SnoDrifters
             rptSponsor.DataBind();
         }
 
+<<<<<<< HEAD
         protected void OnItemDataBound(object sender, RepeaterItemEventArgs e)
         {
 
@@ -44,6 +47,8 @@ namespace SnoDrifters
                 rptSlides.DataBind();
             }
         }
+=======
+>>>>>>> origin/master
 
         //protected void SendMail()
         //{

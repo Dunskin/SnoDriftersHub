@@ -29,9 +29,9 @@ right:10px; left:auto;
 width:auto;
 }
 .carousel-indicators li
-{display:block;
+{display:block; 
  bottom:5px;
-  border:1px solid #00a199; 
+  border:1px solid #000000; 
   text-indent: 0 !important;
             height: 25px !important;
             width: 25px !important;
@@ -41,4 +41,4 @@ width:auto;
             color: #444;
             text-align: center;
 }
-.carousel-indicators li.active{margin-bottom:5px; background:#00a199;}
+.carousel-indicators li.active{margin-bottom:5px; background:#337ab7;}
