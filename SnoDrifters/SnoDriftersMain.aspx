@@ -124,41 +124,14 @@
             </div>            
         </div>
     </div>
+
+
     <div id="tf-events">
-        <div class="container">
+         <div class="container">
             <div class="section-title">
                 <h3>Events</h3>
                 <hr>
             </div>
-<<<<<<< HEAD
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"> 
-         
-    <!--Main Repeater -->
-
-    <asp:Repeater ID= "rptMain" runat="server" OnItemDataBound="OnItemDataBound">  
-        <ItemTemplate>
-              <ol class="carousel-indicators" >
-
-                    <asp:Repeater ID="rptIndicators" runat="server" >
-                        <ItemTemplate>
-                            <li data-target="#myCarousel" data-slide-to='<%# Container.ItemIndex%>' class='<%# Container.ItemIndex == 0 ? "active" : "" %>'>
-                           <%-- <%#Eval("Day")%>--%>
-                            </li>
-                      </ItemTemplate>
-                    </asp:Repeater>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <asp:Repeater ID="rptSlides" runat="server">
-                        <ItemTemplate>
-                            <div <%# Container.ItemIndex == 0 ? "class=\"item active\"" : "class=\"item\"" %>>
-                                <div class="fill" background-image: url(./img/"+MediaLink+") <%#((EventsPic)Container.DataItem).RenderForCarousel()%>;">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h2><%#Eval("Title")%></h2>
-                                    <h3><%#Eval("Month ")%><%#Eval("Day ")%><%#Eval("Year")%></h3>
-                                    <small><%#Eval("Description ")%><%#Eval(" Location")%></small>
-                                </div>
-=======
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">  
            
@@ -182,7 +155,6 @@
                             <small><%#Eval("Location")%></small>
                             <br />
                             <small><%#Eval("Description ")%></small>
->>>>>>> origin/master
                             </div>
                         </div>
                     </div>
@@ -194,57 +166,48 @@
 
     </div>
         </div>
+
+        
+
     <div id="tf-gallery">
         <div class="container">
             <div class="section-title">
                 <h3>Gallery</h3>
                 <hr>
             </div>
-            <div class="space"></div>
-            <div class="row">
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/09.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/02.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/03.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/03.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/02.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/09.jpg" class="img-responsive">
-                </div>
-            </div>
-            <div class="row toppadding">
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/04.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/05.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 col-xs-4">
-                    <img src="img/06.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/06.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/05.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-2 hidden-sm hidden-xs">
-                    <img src="img/04.jpg" class="img-responsive">
-                </div>
-            </div>
-            <ul class="pager">
-                <li class="previous"><a href="#">Previous</a></li>
-                <li class="next"><a href="#">Next</a></li>
-            </ul>
+
+<asp:DataList ID="dtlGallery" 
+        DataKeyField="albumId"
+        DataKeyName="albumId"
+        runat="server"
+        RepeatColumns = "5"
+        RepeatDirection ="Horizontal"
+        BorderStyle="None" 
+        BorderWidth="2px"
+        CellPadding="5"
+        CellSpacing="5">
+
+         <ItemTemplate>
+        
+            <asp:HyperLink ID="test" 
+                         runat="server"
+                         NavigateUrl='<%# Bind("albumid", "SnowDriftersGallery.aspx?id={0}") %>'>
+
+                 <asp:Image ID="TestLink2" 
+                 runat="server" 
+                 OnClick="TestLink2_Click"
+                 Width="300px" Height="200px" 
+                 ImageUrl='<%# Bind("mediaLink", "~/img/{0}") %>' 
+                 style="padding-left:40px"  />   
+     
+            </asp:HyperLink>
+
+         </ItemTemplate>
+    </asp:DataList>
+
+  
+
+
         </div>
     </div>
     <div id="tf-sponsors">
